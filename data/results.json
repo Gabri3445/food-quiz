@@ -1,0 +1,23 @@
+[
+  {
+    "result": "You're a pizza!",
+    "scoreRange": {
+      "minScore": 1,
+      "maxScore": 5
+    }
+  },
+  {
+    "result": "You're a burger!",
+    "scoreRange": {
+      "minScore": 6,
+      "maxScore": 10
+    }
+  },
+  {
+    "result": "You're a sushi roll!",
+    "scoreRange": {
+      "minScore": 11,
+      "maxScore": 15
+    }
+  }
+]

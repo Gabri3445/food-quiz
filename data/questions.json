@@ -1,0 +1,87 @@
+[
+  {
+    "question": "What is your favorite color?",
+    "answers": [
+      {
+        "answer": "Red",
+        "score": 3
+      },
+      {
+        "answer": "Green",
+        "score": 2
+      },
+      {
+        "answer": "Blue",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "question": "What is your favorite type of cuisine?",
+    "answers": [
+      {
+        "answer": "Italian",
+        "score": 2
+      },
+      {
+        "answer": "Mexican",
+        "score": 3
+      },
+      {
+        "answer": "Japanese",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "question": "What is your favorite flavor?",
+    "answers": [
+      {
+        "answer": "Sweet",
+        "score": 1
+      },
+      {
+        "answer": "Salty",
+        "score": 3
+      },
+      {
+        "answer": "Spicy",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "question": "What is your favorite texture?",
+    "answers": [
+      {
+        "answer": "Crunchy",
+        "score": 2
+      },
+      {
+        "answer": "Soft",
+        "score": 1
+      },
+      {
+        "answer": "Chewy",
+        "score": 3
+      }
+    ]
+  },
+  {
+    "question": "What is your favorite ingredient?",
+    "answers": [
+      {
+        "answer": "Cheese",
+        "score": 1
+      },
+      {
+        "answer": "Avocado",
+        "score": 2
+      },
+      {
+        "answer": "Bacon",
+        "score": 3
+      }
+    ]
+  }
+]
