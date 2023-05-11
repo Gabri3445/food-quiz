@@ -3,5 +3,4 @@ interface Answer{
     score: number;
 }
 
-
 export default Answer;
