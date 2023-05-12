@@ -33,14 +33,18 @@ const Home: NextPage<Props> = (props: Props) => {
         setScore(score + Number(target.value));
     };
     return (
-        <>
-            <Form
-                className="flex flex-col items-center justify-center"
-                question={props.questions[currentQuestionNumber]!}
-                onClick={handleClick}
-                onChange={onFormChange}
-            />
-        </>
+        <div className="w-screen h-screen  bg-gray-800">
+            <div className="container mx-auto px-4 py-16">
+                <h1 className="text-3xl font-bold text-center text-white">Which Food Are You?</h1>
+                <div className="flex justify-center pt-14">
+                    <Form
+                        question={props.questions[currentQuestionNumber]!}
+                        onClick={handleClick}
+                        onChange={onFormChange}
+                    />
+                </div>
+            </div>
+        </div>
     );
 
 

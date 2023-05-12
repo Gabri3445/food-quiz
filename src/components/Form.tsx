@@ -10,19 +10,25 @@ export interface FormProps {
 const Form = ({question, onClick, onChange}: FormProps) => {
 
     return (
-        <>
-            <span>{question.question}</span>
+        <div>
+            <span className="text-white text-lg">{question.question}</span>
             {
                 question.answers.map((answer, id) => (
-                        <div key={id}>
-                            <input type="radio" name="answer" value={answer.score} onChange={onChange}/>
-                            <label>{answer.answer}</label>
+                        <div key={id} className="flex items-center mt-2">
+                            <input type="radio" name="answer" id={id.toString()} value={answer.score} onChange={onChange}
+                                   className="w-5 h-5 mr-4"/>
+                            <label className="text-white" htmlFor={id.toString()}>{answer.answer}</label>
                         </div>
                     )
                 )
             }
-            <button onClick={onClick}>Submit</button>
-        </>
+            <div className="flex mt-5 justify-end">
+                <button
+                    className="text-white bg-blue-700 hover:bg-white hover:text-blue-700 border border-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                    onClick={onClick}>Submit
+                </button>
+            </div>
+        </div>
     );
 };
 
