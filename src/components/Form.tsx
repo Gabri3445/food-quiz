@@ -1,4 +1,3 @@
-import FormProps from "~/types/FormProps";
 import Question from "~/types/Question";
 import {ChangeEvent, MouseEvent} from "react";
 
