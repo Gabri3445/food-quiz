@@ -5,6 +5,7 @@ import type Question from "~/types/Question";
 import path from "path";
 import {promises as fs} from 'fs';
 import {useRouter} from "next/router";
+import Head from "next/head";
 
 interface Props {
     questions: Question[];
@@ -33,6 +34,15 @@ const Home: NextPage<Props> = (props: Props) => {
     };
     return (
         <div className="w-screen h-screen  bg-gray-800">
+            <Head>
+                <meta name="title" content="Which Food Are You?"/>
+                <meta name="description" content="Determines which food you are most similar to"/>
+                <meta name="keywords" content="food, quiz"/>
+                <meta name="robots" content="index, follow"/>
+                <meta httpEquiv="Content-Type" content="text/html; charset=utf-8"/>
+                <meta name="language" content="English"/>
+                <title>Which Food Are You?</title>
+            </Head>
             <div className="container mx-auto px-4 py-16">
                 <h1 className="text-3xl font-bold text-center text-white">Which Food Are You?</h1>
                 <div className="flex justify-center pt-14">
