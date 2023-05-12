@@ -25,17 +25,24 @@ const Result: NextPage<ResultProps> = (props: ResultProps) => {
     };
 
     const determineImage = (food: string): string => {
-        const images = [
+        const images: string[] = [
             "/pizza.png",
             "/sushi.png",
             "/burger.png",
         ];
         if (food.includes("pizza")) {
-            return images[0];
+            if (images[0]) {
+                return images[0];
+            }
         } else if (food.includes("sushi")) {
-            return images[1];
+            if (images[1]) {
+                return images[1];
+            }
         }
-        return images[2];
+        if (images[2]) {
+            return images[2];
+        }
+        return "Error";
     };
 
     const food = determineFood();
