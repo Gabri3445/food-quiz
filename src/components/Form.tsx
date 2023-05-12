@@ -1,5 +1,5 @@
-import Question from "~/types/Question";
-import {ChangeEvent, MouseEvent} from "react";
+import type Question from "~/types/Question";
+import type {ChangeEvent, MouseEvent} from "react";
 
 export interface FormProps {
     question: Question;

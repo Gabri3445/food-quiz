@@ -38,14 +38,15 @@ const Result: NextPage<ResultProps> = (props: ResultProps) => {
 export const getStaticProps: GetStaticProps<ResultProps> = async () => {
     const directory = path.join(process.cwd(), "data");
     const results = await fs.readFile(path.join(directory, "results.json"), "utf-8");
+    const resultsArray = JSON.parse(results) as Result[];
     return {
         props: {
-            results: JSON.parse(results)
+            results: resultsArray
         }
     };
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = () => {
     const paths = [...Array(16).keys()].map((score) => ({params: {result: score.toString()}}));
     return {paths, fallback: false};
 };
