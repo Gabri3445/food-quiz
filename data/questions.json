@@ -21,15 +21,15 @@
     "answers": [
       {
         "answer": "Italian",
-        "score": 2
+        "score": 1
       },
       {
         "answer": "Mexican",
-        "score": 3
+        "score": 2
       },
       {
         "answer": "Japanese",
-        "score": 1
+        "score": 3
       }
     ]
   },
@@ -42,11 +42,11 @@
       },
       {
         "answer": "Salty",
-        "score": 3
+        "score": 2
       },
       {
         "answer": "Spicy",
-        "score": 2
+        "score": 3
       }
     ]
   },
@@ -55,15 +55,15 @@
     "answers": [
       {
         "answer": "Crunchy",
-        "score": 2
-      },
-      {
-        "answer": "Soft",
         "score": 1
       },
       {
-        "answer": "Chewy",
+        "answer": "Soft",
         "score": 3
+      },
+      {
+        "answer": "Chewy",
+        "score": 2
       }
     ]
   },
@@ -76,11 +76,11 @@
       },
       {
         "answer": "Avocado",
-        "score": 2
+        "score": 3
       },
       {
         "answer": "Bacon",
-        "score": 3
+        "score": 2
       }
     ]
   }
