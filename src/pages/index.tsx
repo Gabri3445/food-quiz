@@ -35,6 +35,7 @@ const Home: NextPage<Props> = (props: Props) => {
     return (
         <>
             <Form
+                className="flex flex-col items-center justify-center"
                 question={props.questions[currentQuestionNumber]!}
                 onClick={handleClick}
                 onChange={onFormChange}
