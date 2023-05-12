@@ -1,4 +1,4 @@
-import Answer from "~/types/Answer";
+import type Answer from "~/types/Answer";
 
 interface Question {
     question: string;

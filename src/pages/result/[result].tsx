@@ -1,4 +1,4 @@
-import {GetStaticPaths, GetStaticProps, NextPage} from "next";
+import type {GetStaticPaths, GetStaticProps, NextPage} from "next";
 import {useRouter} from "next/router";
 import Result from "~/types/Result";
 import path from "path";
