@@ -1,5 +1,5 @@
 import type {GetServerSideProps, NextPage} from "next";
-import {type ChangeEvent, type MouseEvent, useState} from "react";
+import {type ChangeEvent, useState} from "react";
 import Form from "~/components/Form";
 import type Question from "~/types/Question";
 import path from "path";
@@ -16,7 +16,7 @@ const Home: NextPage<Props> = (props: Props) => {
     const [checkedElement, setCheckedElement] = useState<HTMLInputElement | null>(null);
     const router = useRouter();
 
-    const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+    const handleClick = () => {
         if (currentQuestionNumber < props.questions.length - 1 && checkedElement) {
             setScore(score + Number(checkedElement.value));
             setCurrentQuestionNumber(currentQuestionNumber + 1);
