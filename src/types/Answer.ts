@@ -1,4 +1,4 @@
-interface Answer{
+interface Answer {
     answer: string;
     score: number;
 }
