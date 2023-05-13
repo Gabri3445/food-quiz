@@ -71,11 +71,11 @@ const Page = async ({params}: PageProps) => {
         </div>
     );
 }
-
+/*
 export async function generateStaticParams() {
     const paths = Array(16);
     return paths.map(path => ({params: {result: path}}));
-}
+}*/
 
 export default Page;
 
