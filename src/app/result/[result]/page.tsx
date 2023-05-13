@@ -70,15 +70,13 @@ const Page = async ({params}: PageProps) => {
             </div>
         </div>
     );
-}
+};
 
 export async function generateStaticParams() {
     const params = [];
-
     for (let i = 1; i <= 15; i++) {
         params.push({result: i.toString()});
     }
-
     return params;
 }
 
