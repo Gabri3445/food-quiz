@@ -3,8 +3,6 @@ import path from "path";
 import {promises as fs} from 'fs';
 import Content from "~/components/Content";
 
-export const dynamic = 'force-dynamic';
-
 
 const Page = async () => {
     const fetchData = async (): Promise<Question[]> => {
