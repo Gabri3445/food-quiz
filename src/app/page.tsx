@@ -17,10 +17,10 @@ const Page = async () => {
         return questionsArray;
     };
 
-    const questions = await fetchData();
+    const questions = JSON.stringify(await fetchData());
 
     return (
-        <Content questions={questions}></Content>
+        <Content questionsS={questions}></Content>
     );
 };
 

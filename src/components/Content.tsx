@@ -6,10 +6,11 @@ import Form from "~/components/Form";
 import Question from "~/types/Question";
 
 interface Props {
-    questions: Question[];
+    questionsS: string;
 }
 
-const Content = ({questions}: Props) => {
+const Content = ({questionsS}: Props) => {
+    const questions = JSON.parse(questionsS) as Question[];
     const [currentQuestionNumber, setCurrentQuestionNumber] = useState(0);
     const [score, setScore] = useState(0);
     const [checkedElement, setCheckedElement] = useState<HTMLInputElement | null>(null);
