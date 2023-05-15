@@ -60,7 +60,7 @@ const Result: NextPage<ResultProps> = (props: ResultProps) => {
     const susWebm = score == 104 ? "/giglo.webm" : "/jerma.webm";
 
     return (
-        <div className="w-screen h-screen  bg-gray-800">
+        <div className="w-screen h-screen overflow-hidden bg-gray-800">
             <Head>
                 <meta name="title" content="Which Food Are You?"/>
                 <meta name="description" content="Determines which food you are most similar to"/>
