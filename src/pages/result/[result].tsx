@@ -25,6 +25,9 @@ const Result: NextPage<ResultProps> = (props: ResultProps) => {
             if (score == 104) {
                 return "You are down";
             }
+            if (score == 985) {
+                return "You are down";
+            }
         }
         return "Error";
     };
@@ -53,6 +56,8 @@ const Result: NextPage<ResultProps> = (props: ResultProps) => {
 
     const food = determineFood();
     const image = determineImage(food);
+
+    const susWebm = score == 104 ? "/giglo.webm" : "/jerma.webm";
 
     return (
         <div className="w-screen h-screen  bg-gray-800">
@@ -84,7 +89,7 @@ const Result: NextPage<ResultProps> = (props: ResultProps) => {
                         }
                         return (
                             <video autoPlay loop muted playsInline>
-                                <source src="/jerma.webm" type="video/webm"/>
+                                <source src={susWebm} type="video/webm"/>
                             </video>
                         );
                     })()}
@@ -113,6 +118,8 @@ export const getStaticPaths: GetStaticPaths = () => {
     }
 
     paths.push({params: {result: "104"}});
+
+    paths.push({params: {result: "985"}});
 
     return {paths, fallback: false};
 };
