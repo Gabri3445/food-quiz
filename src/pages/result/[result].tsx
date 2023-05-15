@@ -4,6 +4,7 @@ import Result from "~/types/Result";
 import path from "path";
 import {promises as fs} from "fs";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ResultProps {
     results: Result[];
@@ -20,11 +21,17 @@ const Result: NextPage<ResultProps> = (props: ResultProps) => {
                     return result.result;
                 }
             }
+            if (score == 104) {
+                return "You are down";
+            }
         }
         return "Error";
     };
 
     const determineImage = (food: string): string => {
+        if (score == 104) {
+            return "/jerma.gif";
+        }
         const images: string[] = [
             "/pizza.png",
             "/sushi.png",
@@ -50,10 +57,18 @@ const Result: NextPage<ResultProps> = (props: ResultProps) => {
 
     return (
         <div className="w-screen h-screen  bg-gray-800">
-            <div className="container mx-auto px-4 py-16">
+            <div className="container mx-auto max-w-screen-sm px-4 py-16">
                 <h1 className="text-3xl font-bold text-center text-white mb-10">Result</h1>
                 <p className="text-3xl font-bold text-center text-white">Score: {score}</p>
                 <p className="text-3xl font-bold text-center text-white">{food}</p>
+                <div className="flex justify-end mt-10">
+                    <Link
+                        href="/"
+                        className="text-white bg-blue-700 hover:bg-white hover:text-blue-700 border border-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                        replace={true}
+                    >Go Back
+                    </Link>
+                </div>
                 <div className="flex justify-center mt-10">
                     <Image priority={true} src={image} alt={food} width={512} height={512}></Image>
                 </div>
@@ -74,7 +89,14 @@ export const getStaticProps: GetStaticProps<ResultProps> = async () => {
 };
 
 export const getStaticPaths: GetStaticPaths = () => {
-    const paths = [...Array(16).keys()].map((score) => ({params: {result: score.toString()}}));
+    const paths = [];
+
+    for (let score = 1; score < 16; score++) {
+        paths.push({params: {result: score.toString()}});
+    }
+
+    paths.push({params: {result: "104"}});
+
     return {paths, fallback: false};
 };
 
