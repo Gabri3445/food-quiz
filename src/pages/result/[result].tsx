@@ -5,6 +5,7 @@ import path from "path";
 import {promises as fs} from "fs";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 interface ResultProps {
     results: Result[];
@@ -29,9 +30,6 @@ const Result: NextPage<ResultProps> = (props: ResultProps) => {
     };
 
     const determineImage = (food: string): string => {
-        if (score == 104) {
-            return "/jerma.gif";
-        }
         const images: string[] = [
             "/pizza.png",
             "/sushi.png",
@@ -45,9 +43,10 @@ const Result: NextPage<ResultProps> = (props: ResultProps) => {
             if (images[1]) {
                 return images[1];
             }
-        }
-        if (images[2]) {
-            return images[2];
+        } else if (food.includes("burger")) {
+            if (images[2]) {
+                return images[2];
+            }
         }
         return "Error";
     };
@@ -57,6 +56,15 @@ const Result: NextPage<ResultProps> = (props: ResultProps) => {
 
     return (
         <div className="w-screen h-screen  bg-gray-800">
+            <Head>
+                <meta name="title" content="Which Food Are You?"/>
+                <meta name="description" content="Determines which food you are most similar to"/>
+                <meta name="keywords" content="food, quiz"/>
+                <meta name="robots" content="index, follow"/>
+                <meta httpEquiv="Content-Type" content="text/html; charset=utf-8"/>
+                <meta name="language" content="English"/>
+                <title>Which Food Are You?</title>
+            </Head>
             <div className="container mx-auto max-w-screen-sm px-4 py-16">
                 <h1 className="text-3xl font-bold text-center text-white mb-10">Result</h1>
                 <p className="text-3xl font-bold text-center text-white">Score: {score}</p>
@@ -70,7 +78,16 @@ const Result: NextPage<ResultProps> = (props: ResultProps) => {
                     </Link>
                 </div>
                 <div className="flex justify-center mt-10">
-                    <Image priority={true} src={image} alt={food} width={512} height={512}></Image>
+                    {(() => {
+                        if (image.includes(".png")) {
+                            return <Image priority={true} src={image} alt={food} width={512} height={512}/>;
+                        }
+                        return (
+                            <video autoPlay loop muted playsInline>
+                                <source src="/jerma.webm" type="video/webm"/>
+                            </video>
+                        );
+                    })()}
                 </div>
             </div>
 
